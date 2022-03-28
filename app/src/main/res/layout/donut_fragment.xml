@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DonutFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.donutroomassignment.DonutViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daily Donut Intake"
+            android:textSize="20sp"
+            android:fontFamily="@font/adeline"/>
+
+        <EditText
+            android:id="@+id/etDonutInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="How Many Donuts Did You Eat"
+            android:inputType="number"
+            android:text="@={viewModel.newDonutName}"/>
+
+        <Button
+            android:id="@+id/btnDonuts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textSize="20sp"
+            android:onClick="@{()->viewModel.addDonut()}"/>
+
+        <TextView
+            android:id="@+id/tvDonuts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.donutString}"
+            android:textSize="20sp"
+            android:fontFamily="@font/adeline"/>
+
+    </LinearLayout>
+
+</layout>
